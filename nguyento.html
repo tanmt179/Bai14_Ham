@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim so nguyen to</title>
+</head>
+<body>
+
+<script>
+    function isPrime(number) {
+        let index = 1;
+        for (let i = 2; i < number; i++) {
+            if (number % i === 0) {
+                index = 0
+                break;
+            }
+        }
+        return index;
+    }
+
+    // for (let i = 2; i <= 100; i++) {
+    //     if (isPrime(i)) {
+    //         document.write(i+" ")
+    //     }
+    // }
+    let number = prompt('enter a number');
+    if (isPrime(number)) {
+        document.write('la so nguyen to')
+    } else {
+        document.write('khong la so nguyen to')
+    }
+</script>
+</body>
+</html>
