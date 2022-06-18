@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meters_Feet</title>
+</head>
+<body>
+<h1>Chuyen doi tu feet sang Meters</h1>
+<p>nhap feet</p><input type="number" id="feet" value="" oninput="feet()"><br>
+<p>meter: </p><span id="inmet"></span>
+<h1>Chuyen doi tu Meters sang feet</h1>
+<p>nhap meter</p><input type="number" id="meter" value="" oninput="meter()"><br>
+<p>meter: </p><span id="infeet"></span>
+<script>
+    function feet() {
+        let feet = +document.getElementById('feet').value;
+        let meter = 0.305 * feet;
+        document.getElementById('inmet').innerHTML = meter;
+    }
+
+    function meter() {
+        let meter = +document.getElementById('meter').value;
+        let feet = 3.279 * meter;
+        document.getElementById('infeet').innerHTML = feet;
+    }
+
+</script>
+</body>
+</html>
