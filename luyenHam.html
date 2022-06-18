@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen ham</title>
+</head>
+<body>
+<button onclick="clickme()">Clickme</button>
+<hr>
+<p>enter a number</p><span id="in"><input type="number" id="number" oninput="chane()"></span>
+<hr>
+<p>enter number1</p><input type="number" id="number1"><br>
+<p>enter number2</p><input type="number" id="number2" oninput="sosanh()">
+<script>
+    function clickme() {
+        alert('xin chao')
+    }
+
+    //...................................
+    function change(a) {
+        return a + 1;
+    }
+
+    function chane() {
+        let number = +document.getElementById('number').value;
+        document.getElementById('in').innerHTML = change(number);
+    }
+
+    //............................................
+    function sosanh() {
+        let num1 = +document.getElementById('number1').value;
+        let num2 = +document.getElementById('number2').value;
+        if (num1 > num2) {
+            alert('number1>number2');
+        } else {
+            let sum = num1 + num2;
+            alert(sum)
+        }
+    }
+
+    //...........................................
+    // function addNumbers() {
+    //     firstNum = 4;
+    //     secondNum = 8;
+    //     result = firstNum + secondNum;
+    //     return result;
+    // }
+    // result = 0;
+    // alert(result);
+    // result = addNumbers();
+    // alert(result);
+    //.................................................
+    let arr = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let arr1 = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+    let a = prompt('Nhap ten ngoi sao');
+    func(a);
+
+    function func(a) {
+        let x = arr.indexOf(a);
+        if (x == -1) {
+            alert('khong co')
+        } else {
+            alert(arr1[x]);
+        }
+    }
+
+</script>
+</body>
+</html>
