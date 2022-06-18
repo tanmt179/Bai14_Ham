@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quan ly SP</title>
+    <style>
+        button {
+            background: forestgreen;
+            color: white;
+        }
+
+        .ab {
+            border: 1px;
+            border-collapse: collapse;
+            background: aquamarine;
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+<h1>Add New Product</h1>
+<input type="text" id="name" value="" placeholder="New Product">
+<button id="add" onclick="add()">Add</button>
+<br>
+<h4>Display All Product</h4>
+<button id="click" onclick="clicks()">Click</button>
+<br>
+<p id="in"></p><br>
+<table>
+    <tr>
+        <th>Nhập tên sản phẩm</th>
+        <th>Nhập tên muốn thay đổi</th>
+        <td colspan="2">
+            <button id="change" onclick="change()">Change</button>
+        </td>
+    </tr>
+    <tr>
+        <td><input type="text" id="name1"></td>
+        <td><input type="text" id="name2"></td>
+    </tr>
+</table>
+<script>
+    let arr = ['Sony Xperia', 'Samsung Galaxy', 'Nokia', 'Xiaomi', 'Apple', 'Oppo', 'Fujitsu'];
+    var count = 1
+
+    function clicks() {
+        if (count % 2 != 0) {
+            let data = '<table class="ab">';
+            for (let i = 0; i < arr.length; i++) {
+                data += '<tr>';
+                for (let j = 0; j < 3; j++) {
+                    if (j == 0) {
+                        data += '<th>' + (i + 1) + '</th>';
+                    } else if (j == 1) {
+                        data += '<td>' + arr[i] + '</td>';
+                    } else {
+                        data += '<td>' + '<button id="" onclick="cancel">Cancel</button>' + '</td>';
+                    }
+                }
+                data += '</tr>'
+            }
+            count = 2;
+            document.getElementById('in').innerHTML = data + '</table>';
+        } else {
+            document.getElementById('in').innerHTML = "";
+            count = 1;
+        }
+    }
+
+
+    function add() {
+        let name = document.getElementById('name').value;
+        arr.push(name);
+        clicks()
+        clicks()
+    }
+
+    function cancel() {
+        arr.splice(id, 1)
+        return;
+    }
+
+    function change() {
+        let name1 = document.getElementById('name1').value;
+        let name2 = document.getElementById('name2').value;
+        for (let i = 0; i < arr.length; i++) {
+            if (name1 === arr[i]) {
+                arr[i] = name2;
+            }
+        }
+        clicks()
+        clicks()
+    }
+</script>
+</body>
+</html>
